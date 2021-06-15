@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './example/my_home_page.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(),
+      home: MyHomePage(),
     );
   }
 }
