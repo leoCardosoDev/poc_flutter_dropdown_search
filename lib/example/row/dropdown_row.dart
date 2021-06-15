@@ -15,7 +15,7 @@ class DropRow extends StatelessWidget {
             dropdownSearchDecoration: InputDecoration(
               filled: true,
               border: UnderlineInputBorder(
-                borderSide: BorderSide(color: Color(0xFF01689A)),
+                borderSide: BorderSide(color: Color(0xFF01AFBBC)),
               ),
             ),
             showAsSuffixIcons: true,

@@ -1,7 +1,8 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import '../example/row/dropdown_row.dart';
 
-import '../example/string/dropdown_string.dart';
+// import '../example/string/dropdown_string.dart';
 // import '../example/string/dropdown_string2.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -25,7 +26,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // child: DropStringTwo(openDropDownProgKey: openDropDownProgKey),
           child: Column(
             children: [
-              DropString(),
+              // DropString(),
+              Divider(),
+              DropRow(),
             ],
           ),
         ),
