@@ -1,6 +1,9 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
+import '../example/string/dropdown_string.dart';
+// import '../example/string/dropdown_string2.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -19,8 +22,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Form(
           key: _formKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
+          // child: DropStringTwo(openDropDownProgKey: openDropDownProgKey),
           child: Column(
-            children: [],
+            children: [
+              DropString(),
+            ],
           ),
         ),
       ),
