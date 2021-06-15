@@ -7,7 +7,7 @@ class DropString extends StatelessWidget {
     return DropdownSearch<String>(
       validator: (v) => v == null ? "required field" : null,
       hint: "Select a country",
-      mode: Mode.MENU,
+      mode: Mode.DIALOG,
       showSelectedItem: true,
       items: ["Brazil", "Italia (Disabled)", "Tunisia", 'Canada'],
       label: "Menu mode *",
