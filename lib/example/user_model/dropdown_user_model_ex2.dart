@@ -1,30 +1,22 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:flutter_poc_dropdown_search/example/user_model.dart';
+import '../../model/user_model.dart';
 
-class DropUserEx1 extends StatelessWidget {
+class DropUserEx2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownSearch<UserModel>(
-      searchBoxController: TextEditingController(text: 'Mrs'),
-      mode: Mode.BOTTOM_SHEET,
-      isFilteredOnline: true,
-      showClearButton: true,
       showSearchBox: true,
-      label: 'User *',
-      dropdownSearchDecoration: InputDecoration(
-        filled: true,
-        fillColor: Theme.of(context).inputDecorationTheme.fillColor,
-      ),
-      autoValidateMode: AutovalidateMode.onUserInteraction,
-      validator: (UserModel u) => u == null ? "user field is required " : null,
+      showSelectedItem: true,
+      compareFn: (UserModel i, UserModel s) => i.isEqual(s),
+      label: "Person",
       onFind: (String filter) => getData(filter),
       onChanged: (UserModel data) {
         print(data);
       },
       dropdownBuilder: _customDropDownExample,
-      popupItemBuilder: _customPopupItemBuilderExample,
+      popupItemBuilder: _customPopupItemBuilderExample2,
     );
   }
 
@@ -34,14 +26,10 @@ class DropUserEx1 extends StatelessWidget {
       child: (item?.avatar == null)
           ? ListTile(
               contentPadding: EdgeInsets.all(0),
-              leading: CircleAvatar(),
               title: Text("No item selected"),
             )
           : ListTile(
               contentPadding: EdgeInsets.all(0),
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(item.avatar),
-              ),
               title: Text(item.name),
               subtitle: Text(
                 item.createdAt.toString(),
@@ -50,7 +38,7 @@ class DropUserEx1 extends StatelessWidget {
     );
   }
 
-  Widget _customPopupItemBuilderExample(
+  Widget _customPopupItemBuilderExample2(
       BuildContext context, UserModel item, bool isSelected) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 8),
@@ -65,9 +53,6 @@ class DropUserEx1 extends StatelessWidget {
         selected: isSelected,
         title: Text(item.name),
         subtitle: Text(item.createdAt.toString()),
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(item.avatar),
-        ),
       ),
     );
   }

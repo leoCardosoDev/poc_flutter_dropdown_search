@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:flutter_poc_dropdown_search/example/user_model.dart';
+import '../../model/user_model.dart';
 
-class DropUserEx1 extends StatelessWidget {
+class DropUserEx extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownSearch<UserModel>(
@@ -25,7 +25,7 @@ class DropUserEx1 extends StatelessWidget {
       queryParameters: {"filter": filter},
     );
 
-    var models = UserModel.fromJsonList(response.data);
+    List<UserModel> models = UserModel.fromJsonList(response.data);
     return models;
   }
 }

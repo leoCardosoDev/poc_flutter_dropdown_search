@@ -1,7 +1,10 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import '../example/row/dropdown_row.dart';
 
+import '../example/user_model/dropdown_user_model_ex2.dart';
+// import '../example/user_model/dropdown_user_model_ex1.dart';
+// import '../example/user_model/dropdown_user_model_ex.dart';
+// import '../example/row/dropdown_row.dart';
 // import '../example/string/dropdown_string.dart';
 // import '../example/string/dropdown_string2.dart';
 
@@ -28,7 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               // DropString(),
               Divider(),
-              DropRow(),
+              // DropRow(),
+              Divider(),
+              // DropUserEx(),
+              DropUserEx2(),
             ],
           ),
         ),
